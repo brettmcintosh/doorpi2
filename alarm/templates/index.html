@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block controller %}AlarmController{% endblock controller %}
+
+{% block body %}
+<div>
+    {% raw %}
+
+    <div id="alarm-state" class="col-sm-6 col-sm-offset-3">
+        <div class="panel" ng-class="(alarm.status=='ARMED') ? 'panel-success':'panel-default'">
+            <div class="panel-heading">
+                <h1 class="panel-title">
+                    <emp>{{alarm.status}}</emp>
+                </h1>
+            </div>
+            <div class="panel-body ">
+                <p ng-show="!alarm.triggered">
+                    Everything's fine!
+                </p>
+                <p ng-show="alarm.triggered">
+                    Entry at {{alarm.entry_time}}
+                </p>
+            </div>
+            <div class="panel-footer">
+                <button type="button" class="btn btn-success btn-block btn-lg" ng-click="sendCommand('ARM')" ng-show="alarm.status == 'DISARMED'">Arm</button>
+                <button type="button" class="btn btn-success btn-block btn-lg" ng-click="sendCommand('DISARM')" ng-show="alarm.status == 'ARMED'">Disarm</button>
+            </div>
+        </div>
+
+
+    </div>
+
+    {% endraw %}
+</div>
+{% endblock body %}

@@ -1,0 +1,19 @@
+body {
+    background-color: darkslategray;
+    margin-top: 20px;
+}
+
+#alarm-state {
+    font-size: 1.4em;
+    text-align: center;
+}
+
+.panel-heading  {
+    text-align: center;
+}
+
+.error {
+    color: red;
+    text-align: center;
+    text-emphasis: filled;
+}

@@ -1,0 +1,11 @@
+[Unit]
+Description=nfc-eventd
+
+[Service]
+TimeoutStartSec=0
+ExecStart=/usr/local/bin/nfc-eventd
+User=root
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

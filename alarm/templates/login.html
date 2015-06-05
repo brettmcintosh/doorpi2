@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div>
+
+    <div id="login" class="col-sm-6 col-sm-offset-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h1 class="panel-title">
+                    Login
+                </h1>
+            </div>
+            <div class="panel-body ">
+
+                {% if error %}
+                    <p class="error">{{ error }}</p>
+                {% endif %}
+
+                <form method="post" action="/login/" id="login-form">
+                    <div class="form-group col-sm-8 col-sm-offset-2">
+                        <label for="username">Username:</label>
+                        <input type="text" class="form-control" name="username">
+                        <label for="password">Password:</label>
+                        <input type="password" class="form-control" name="password">
+                    </div>
+                </form>
+
+            </div>
+            <div class="panel-footer">
+                <button type="submit" class="btn btn-success btn-block btn-lg" form="login-form">Submit</button>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+{% endblock body %}

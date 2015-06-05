@@ -1,0 +1,12 @@
+[Unit]
+Description=Alarm
+
+[Service]
+TimeoutStartSec=0
+ExecStart=/usr/bin/python3 /home/pi/scratch/doorpi/alarm/server.py
+WorkingDirectory=/home/pi/scratch/doorpi/
+User=root
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
