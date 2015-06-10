@@ -1,5 +1,4 @@
 import time
-import multiprocessing
 import threading
 import logging
 from datetime import datetime
@@ -9,7 +8,6 @@ import sensor
 import routines
 import notifications
 from models import authenticate_nfc
-# import authenticator
 
 
 ALARM_CODES = (settings.ARMED, settings.DISARMED)
@@ -20,8 +18,7 @@ DISARMED = settings.DISARMED
 class Alarm(object):
 
     def __init__(self):
-        self.process_lock = multiprocessing.Lock()
-        # self.thread_lock = threading.Lock()
+        self.process_lock = threading.Lock()
         self._status = None
         self._update_status_from_file()
         self.is_triggered = False

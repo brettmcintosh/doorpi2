@@ -52,6 +52,10 @@ The alarm will send an email notification if not disarmed within a set amount of
 * pygame-mixer for python3
     * Plays sound files.
 
+#### Config
+* Systemd service files are included for nfc, celery, and the alarm.
+* The included nfc-eventd.conf file is configured to run bin/nfc_script.sh whenever an NFC card is scanned.
+
 #### Parts:
 * Raspberry Pi (I used a model B) with SD card, case and power supply
 * RPi Camera

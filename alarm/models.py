@@ -1,10 +1,6 @@
 from flask.ext.sqlalchemy import SQLAlchemy
 from passlib.hash import sha256_crypt
 
-# import flask
-# app = flask.Flask('models')
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///alarm.db'
-# db = SQLAlchemy(app)
 
 db= SQLAlchemy()
 
