@@ -124,7 +124,7 @@ class Alarm(object):
     def receive_nfc_message(self, nfc_id):
         if authenticate_nfc(str(nfc_id)):
             with self.process_lock:
-                logging.info('Received valid NFC key.', nfc_id)
+                logging.info('Received valid NFC key. %s', nfc_id)
                 if self.status == settings.ARMED:
                     self.disarm()
                 elif self.status == settings.DISARMED:
